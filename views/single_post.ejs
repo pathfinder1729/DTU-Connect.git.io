@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header>
+    <%- include('partials/header') %>
+</header>
+<body>
+    <div class="mydiv " >
+        <div class="container " style="align-items: center; display: flex; justify-content: center;">
+            <div class="row">
+              <% { %>
+               <div class="container" style="align-items: center; display: flex; justify-content: center; width: auto; height: auto;">
+    
+                
+    
+                <div class="card">
+                  <% if(post.type=="Blog"){ %>
+                  <img class="card-img" src="/img/Blog_pic.png" alt="Bologna">
+                  <% }else{ %>
+                    <img class="card-img" src="/img/interview.png" alt="Bologna">
+                  <% } %>
+                  <div >
+                    <a href="#" class="btn btn-light btn-sm"><%= post.type %></a>
+                  </div>
+    
+                   
+                    <div class="card-body " >
+                      <h4 class="card-title"><%= post.title %></h4>
+                      <small class="text-muted cat">
+                        <i class="bi bi-pen">Author:</i> <%= post.author %>
+                      </small>
+    
+                      <p class="card-text " style=" overflow: auto;  height:auto; "><%= post.content %></p>
+                      
+                    </div>
+
+                    <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                      <%var timestamp=new Date(post.date).getTime() %>
+                      <%var todate=new Date(timestamp).getDate() %>
+                      <%var tomonth=new Date(timestamp).getMonth()+1 %>
+                      <% var toyear=new Date(timestamp).getFullYear() %>
+                      <% var original_date=tomonth+'/'+todate+'/'+toyear %>
+    
+                      <div class="views">Date: <%= original_date%>
+                      </div>
+                      <div class="stats">
+                          <i class="fa-solid fa-heart"></i><%= post.upvoteLists.length %>
+                         
+                      </div>
+                        <a href="/single_post/vote/<%=post._id%>" class="btn btn-info">Vote</a>
+                    </div>
+                  </div>
+                </div>
+                  <% } %>
+            </div>
+            
+          </div>
+
+    </div>
+   
+</body>
+<footer>
+    <%- include('partials/footer') %>
+</footer>
+</html>

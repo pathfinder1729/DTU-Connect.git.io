@@ -1,0 +1,80 @@
+body{
+
+    background-color: rgb(46, 33, 157);
+
+}
+.compose{
+    text-align: center;
+    font-size: 30px;
+    color: burlywood;
+}
+.form1{
+    margin: 0% 10%;
+    padding: 10px;
+    background-color: rgb(21, 84, 244);
+
+}
+.title_div{
+    text-align: center;
+}
+.dropdown1{
+    text-align: center;
+}
+.post_btn
+{
+    display: flex;
+    justify-content: center;
+}
+#content{
+    background-color: rgb(77, 77, 172);
+    border-radius: 20px;
+    padding: 20px;
+    resize: none;
+    width: 90%;
+    color: white;
+}
+#content-div{
+    display: flex;
+    justify-content: center;
+}
+#submit{
+    background-color: blueviolet;
+    margin: 10px;
+}
+#title{
+    width: 90%;
+    padding: 10px;
+}
+
+p{
+    font-size: 30px;
+    font-style: oblique;
+    text-align: center;
+}
+
+#interview{
+    
+    margin: 0% 5%;
+    padding: 1%;
+    display: inline-block;
+}
+#blog{
+    
+    margin: 0% 5%;
+    padding: 1%;
+    display: inline-block;
+}
+#notice{
+    margin: 0% 5%;
+    padding: 1%;
+    display: inline-block;
+}
+#interview:hover{
+    background-color: rgb(210, 198, 198);
+}
+#blog:hover{
+    background-color: rgb(210, 198, 198);
+}
+#notice:hover{
+    background-color: rgb(210, 198, 198);
+}
