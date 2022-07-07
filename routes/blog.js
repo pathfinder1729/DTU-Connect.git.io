@@ -11,6 +11,15 @@ router.get('/blog',async(req,res )=>
    res.render('blog.ejs', {blogs}); 
 }); 
 
+router.get('/notice',async(req,res )=>
+{
+     
+    let newBlogs = await Post.find({}); 
+     let blogs = newBlogs.reverse() ; 
+     console.log(blogs) ; 
+   res.render('notice.ejs',{blogs}); 
+}); 
+
 router.get('/single_post/:id',async(req,res )=>
 {
     const  id = req.params.id ; 

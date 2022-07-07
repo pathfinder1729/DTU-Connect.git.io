@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/notice.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 style="text-align: center; text-decoration: underline;">NOTICE</h1>
+        <% for(let i in blogs){ %>
+            <% if(blogs[i].type=="Notice"){ %>
+
+        <div class="notice-box">
+
+           
+            <h3><%= blogs[i].title %></h3>
+            <p> <%= blogs[i].content %></p>
+            <!-- <a href="#">Read more...</a> -->
+           
+        </div>  
+        <% } }%>
+        <div class="notice-box">
+            <h3>Title...</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos reprehenderit cum suscipit laudantium rerum recusandae, quos, saepe natus eum distinctio mollitia illo, esse exercitationem aliquid itaque culpa dolorum? Vero, ipsam!</p>
+            <a href="#">Read more...</a>
+        </div>  
+    </div>
+</body>
+</html>

@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container"> 
         <div class="row">
           <% for(let i in blogs){ %>
            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
@@ -26,6 +26,8 @@
             
 
             <div class="card">
+              <% while(blogs[i].type=="Notice"){ i++}%>
+
               <% if(blogs[i].type=="Blogs"){ %>
               <img class="card-img" src="/img/Blog_pic.png" alt="Bologna">
               <% }else{ %>
@@ -34,7 +36,7 @@
               <div >
                 <a href="#" class="btn btn-light btn-sm"><%= blogs[i].type %></a>
               </div>
-
+               
                
                 <div class="card-body " >
                   <h4 class="card-title"><%= blogs[i].title %></h4>
