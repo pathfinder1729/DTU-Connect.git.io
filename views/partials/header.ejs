@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-          <img src="/img/headerlogo.jpg" class="logo-image img-fluid" />
+          <img src="/img/headerlogo.png" class="logo-image img-fluid" />
         </a>
         <button
           class="navbar-toggler"
@@ -36,36 +36,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navmain">
             <li class="nav-item pe-4">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link" style="color:white;" aria-current="page" href="/">Home</a>
             </li>
 
             <li class="nav-item pe-4">
-              <a class="nav-link active" aria-current="page" href="/blog"
-                >Blog</a
+              <a class="nav-link" style="color:white;" aria-current="page" href="/blog"
+                >Posts</a
               >
             </li>
 
             <li class="nav-item pe-4">
-              <a class="nav-link active" aria-current="page" href="/notice"
+              <a class="nav-link active" style="color:white;" aria-current="page" href="/notice"
                 >Notice</a
               >
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/blog"
+              <a class="nav-link active" style="color:white;" aria-current="page" href="/interview"
                 >Interview Experience</a
               >
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/search"
                 >Search</a
               >
-            </li>
+            </li> -->
 
             <%if(isLoggedIn){%>
             <li class="nav-item pe-4">
-              <a class="nav-link active" aria-current="page" href="/create-post"
+              <a class="nav-link active" style="color:white;" aria-current="page" href="/create-post"
                 >Create Post</a
               >
             </li>
@@ -86,24 +86,24 @@
 
             <%if(isLoggedIn){%>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/logout"
-                >Log out <%=username%> </a
+              <a class="nav-link active" style="color:white;" aria-current="page" href="/logout"
+                >Logout <%=username%> </a
               >
             </li>
              <%}else {%>
              
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/login"
+              <a class="nav-link active" style="color:white;" aria-current="page" href="/login"
                 >Login</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">/</a>
+              <a class="nav-link active" style="color:white;"aria-current="page" href="#">/</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/signup"
+              <a class="nav-link active"  style="color:white;"aria-current="page" href="/signup"
                 >Sign Up</a
               >
             </li>

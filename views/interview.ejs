@@ -1,12 +1,10 @@
 <%- include('partials/header') %>
 <head>
-  <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posts</title>
-  <link rel = "icon" href =  "./img/headerlogo.png"    
-  type = "image/x-icon">
   <link rel="stylesheet" href="/blog.css">
+  <title>Interview Experience</title>
+  <link rel="stylesheet" href="/blog.css">
+  <link rel = "icon" href =  "./img/write.png"    
+  type = "image/x-icon">
 </head>
 
 <div>
@@ -23,16 +21,19 @@
         </ul>
       </div> -->
     </div>
-
+    
+    <% for(let i =0; i<blogs.length    ;i++){ %>
+        <% if(blogs[i].type=="Interview Experience") {%>
     <div class="container"> 
+       
         <div class="row">
-          <% for(let i in blogs){ %>
+          
            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
 
             
 
             <div class="card">
-              <% while(blogs[i].type=="Notice"){ i++}%>
+             
 
               <% if(blogs[i].type=="Blogs"){ %>
               <img class="card-img" src="/img/Blog_pic.png" alt="Bologna">
@@ -70,11 +71,14 @@
                 </div>
               </div>
             </div>
-              <% } %>
+             
         </div>
-        
+      
       </div>
+      <%}%>
+      <% } %>
 </div>
+
 
 <footer>
   <%- include('partials/footer') %>

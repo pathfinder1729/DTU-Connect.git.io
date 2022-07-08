@@ -1,5 +1,6 @@
 .navbar{
     background-color: rgb(26,57,99);
+    color:white; 
     
 }
 .nav-link{
@@ -18,4 +19,7 @@
 }
 .navitem{
     padding:0px 200px ;
+}
+.white_color{
+    color: white;
 }

@@ -11,6 +11,14 @@ router.get('/blog',async(req,res )=>
    res.render('blog.ejs', {blogs}); 
 }); 
 
+router.get('/interview',async(req,res )=>
+{
+     
+    let newBlogs = await Post.find({}); 
+     let blogs = newBlogs.reverse() ; 
+   res.render('interview.ejs', {blogs}); 
+}); 
+
 router.get('/notice',async(req,res )=>
 {
      

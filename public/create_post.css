@@ -1,6 +1,6 @@
-body{
+.body{
 
-    background-color: rgb(46, 33, 157);
+    /* background-color: rgb(157, 33, 33); */
 
 }
 .compose{
@@ -9,13 +9,18 @@ body{
     color: burlywood;
 }
 .form1{
-    margin: 0% 10%;
+    margin:5%;
     padding: 10px;
-    background-color: rgb(21, 84, 244);
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(174, 182, 238);
 
 }
 .title_div{
+    
+    
     text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 .dropdown1{
     text-align: center;
@@ -25,25 +30,33 @@ body{
     display: flex;
     justify-content: center;
 }
+
 #content{
-    background-color: rgb(77, 77, 172);
+    /* background-color: rgb(77, 77, 172); */
     border-radius: 20px;
     padding: 20px;
     resize: none;
     width: 90%;
-    color: white;
+    color: black;
+     
 }
 #content-div{
     display: flex;
     justify-content: center;
 }
 #submit{
-    background-color: blueviolet;
+    /* background-color: rgba(43, 107, 226, 0.658); */
     margin: 10px;
+    height: auto;
+    width:auto;
+    color: rgb(35, 44, 58);
+    font-family: "Times New Roman", Times, serif;
 }
 #title{
+    font-family: "Lucida Console", "Courier New", monospace;
     width: 90%;
     padding: 10px;
+    
 }
 
 p{
@@ -77,4 +90,17 @@ p{
 }
 #notice:hover{
     background-color: rgb(210, 198, 198);
+}
+
+.type
+{
+    font-family: "Times New Roman", Times, serif;
+     
+}
+#kk
+{
+     
+    text-align: center;
+    
+  
 }

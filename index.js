@@ -7,6 +7,11 @@ var mongoose = require('mongoose');
 const session = require("express-session")
 const MongoDBStore = require("connect-mongodb-session")(session);
 
+ 
+const router = express.Router();
+const Post = require('./model/post'); 
+
+
   
 
  const createRoutes = require("./routes/create"); 
@@ -46,7 +51,64 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 app.get("/", async (req, res) => {
  
   await req.flash('info', 'Flash is back!');
-  res.render("home.ejs");// {isLoggedIn}
+  let newBlogs = await Post.find({}); 
+     let blogs = newBlogs.reverse() ;
+     
+     var arr=[] ; 
+      var ie="NO DATA";
+      var b1="NO DATA" ; 
+      var b2 ="NO DATA"; 
+      var notice ="NO DATA" ;
+      var cnt =0 ;   
+      var j=0 ; 
+      var a=false ; 
+      var b=false;
+      var c=false ; 
+      var d =false ; 
+     for( let i=0 ;i<blogs.length; i++ )
+     {
+         
+           if(blogs[i].type =="Interview Experience")
+           {
+             ie = blogs[i]; 
+             
+              a=true ;  
+           }
+           else if(blogs[i].type =="Notice")
+           {
+            notice = blogs[i] ; 
+            j++ ; 
+            b=true ; 
+           }
+           else if(blogs[i].type =="Blogs" &&  cnt ==0 )
+           {
+           b1 = blogs[i]; 
+           cnt++ ; 
+           j++ ; 
+           c=true ; 
+           }
+           else if(blogs[i].type =="Blogs" &&  cnt ==1)
+           {
+            b2 = blogs[i]; 
+           cnt++ ; 
+           j++ ; 
+           d=true ; 
+           }
+           if(a===true && b===true && c===true && d===true)
+           break ; 
+     }
+     console.log(notice) ; 
+     console.log(ie) ;
+     console.log(b1) ; 
+     console.log(b2) ; 
+     arr.push(ie) ; 
+     
+     arr.push(notice); 
+     arr.push(b1) ; 
+     arr.push(b2) ; 
+
+      
+  res.render("home.ejs",{arr});// {isLoggedIn}
 });
 
 app.listen(8000, () => {

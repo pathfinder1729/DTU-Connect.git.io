@@ -4,30 +4,31 @@
     background-image: url(/img/welcome.jpg);
     height: 90vh;
     background-repeat: no-repeat;
-    background-size: 240vh;
-   
+    background-size: 220vh;
+    padding: 10px;
     position: relative;
 }
 #homepage-text{
   
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 60px;
-    color: white;
+    top: 15%;
+    left: 25%;
+    /* transform: translate(-50%, -50%); */
+    font-size: 50px;
+    color: #ff9933
     
 }
 
 /* Main Box Recent*/
 #main_box {
-    margin: 90px;
-    height: 75vh;
+    margin: 0px;
+    padding: 10px ; 
+    height: 70vh;
     border-radius: 10px;
     align-items: center;
 }
 .card {
-    padding: 20px;
+    padding: 0px;
     border-radius: 10px;
     border: 2px solid black;
     margin: 20px;
@@ -65,3 +66,38 @@ body {
     background: rgb(26,57,99) ;
   }
   
+  /* /------------------------------------\
+	Contact
+\------------------------------------/ */
+
+.contact {
+    margin: 15px 0px;
+    text-align: center;
+}
+
+.contact i {
+    font-size: 36px;
+    color: #6195FF;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contact-form .input {
+    margin-bottom: 20px;
+}
+
+
+.contact-form .input:nth-child(1), .contact-form .input:nth-child(2) {
+    width: calc(50% - 10px);
+}
+
+.contact-form .input:nth-child(2) {
+    margin-left: 15px;
+}
+.desc_color{
+  color: white;
+}
