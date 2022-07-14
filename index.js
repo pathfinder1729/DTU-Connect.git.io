@@ -6,8 +6,8 @@ const {flash} = require("express-flash-message")
 var mongoose = require('mongoose'); 
 const session = require("express-session")
 const MongoDBStore = require("connect-mongodb-session")(session);
-
- 
+const uri = "mongodb+srv://Vikash:1234@cluster0.fhbsion.mongodb.net/?retryWrites=true&w=majority";
+const local = "mongodb://localhost:27017/Check_connection"; 
 const router = express.Router();
 const Post = require('./model/post'); 
 
@@ -19,7 +19,7 @@ const Post = require('./model/post');
  const authRoutes =require("./routes/auth");  
  const req = require("express/lib/request");
 
- const store = new MongoDBStore({ uri:"mongodb://localhost:27017/Check_connection", collection: 'sessions'})
+ const store = new MongoDBStore({ uri:uri, collection: 'sessions'})
 
  
  app.use(bodyParser.urlencoded({ extended: false }));
@@ -55,10 +55,10 @@ app.get("/", async (req, res) => {
      let blogs = newBlogs.reverse() ;
      
      var arr=[] ; 
-      var ie="NO DATA";
-      var b1="NO DATA" ; 
-      var b2 ="NO DATA"; 
-      var notice ="NO DATA" ;
+      var ie= "Na"
+      var b1="Na";
+      var b2 ="Na";
+      var notice ="Na";
       var cnt =0 ;   
       var j=0 ; 
       var a=false ; 
@@ -97,17 +97,14 @@ app.get("/", async (req, res) => {
            if(a===true && b===true && c===true && d===true)
            break ; 
      }
-     console.log(notice) ; 
-     console.log(ie) ;
-     console.log(b1) ; 
-     console.log(b2) ; 
+    
      arr.push(ie) ; 
      
      arr.push(notice); 
      arr.push(b1) ; 
      arr.push(b2) ; 
 
-      
+      console.log(session.username) ; 
   res.render("home.ejs",{arr});// {isLoggedIn}
 });
 
@@ -115,7 +112,7 @@ app.listen(8000, () => {
   console.log("Listening at 8000");
 });
 
- mongoose.connect("mongodb://localhost:27017/Check_connection",()=>{
+ mongoose.connect(uri,()=>{
      
   console.log("connected to db2");
 })

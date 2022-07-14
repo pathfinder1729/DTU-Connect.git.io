@@ -48,7 +48,8 @@ router.post("/signup",  async (req, res) => {
     
         console.log(user)
         req.session.isLoggedIn = true;
-        //req.session.user= user ; 
+        req.session.user= user ; 
+
         //console.log(req.session.user)
         console.log(req.body.email) ; 
         res.redirect("/");

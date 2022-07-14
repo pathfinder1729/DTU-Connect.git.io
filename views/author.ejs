@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search</title>
+  <link rel = "icon" href =  "./img/headerlogo.png"    
+  type = "image/x-icon">
+  <link rel="stylesheet" href="/blog.css">
+</head>
+
+<div>
+    <div class=" nav_btn my-3 p-3 d-flex justify-content-end">
+    <!-- <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Filter
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">All</a></li>
+          <li><a class="dropdown-item" href="#">Interviews</a></li>
+          <li><a class="dropdown-item" href="#">Blogs</a></li>
+          <li><a class="dropdown-item" href="#">Notices</a></li>
+        </ul>
+      </div> -->
+    </div>
+
+    <div class="container"> 
+        <div class="row">
+          <% for(let i in blogs){ %>
+           <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+
+            
+
+            <div class="card">
+              
+
+              <% if(blogs[i].type=="Blogs"){ %>
+              <img class="card-img" src="/img/Blog_pic.png" alt="Bologna">
+              <% }else if(blogs[i].type=="Interview Experience"){ %>
+                <img class="card-img" src="/img/interview.png" alt="Bologna">
+              <% } %>
+              <div >
+                <a href="#" class="btn btn-light btn-sm"><%= blogs[i].type %></a>
+              </div>
+               
+               
+                <div class="card-body " >
+                  <h4 class="card-title"><%= blogs[i].title %></h4>
+                  <small class="text-muted cat">
+                    <i class="bi bi-pen">Author:</i> <%= blogs[i].author %>
+                  </small>
+
+                  <p class="card-text " style=" overflow: auto;  height: 10rem; "><%= blogs[i].content %></p>
+                  <a href="/single_post/<%=blogs[i]._id %>" class="btn btn-info">Read More</a>
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                  <%var timestamp=new Date(blogs[i].date).getTime() %>
+                  <%var todate=new Date(timestamp).getDate() %>
+                  <%var tomonth=new Date(timestamp).getMonth()+1 %>
+                  <% var toyear=new Date(timestamp).getFullYear() %>
+                  <% var original_date=tomonth+'/'+todate+'/'+toyear %>
+
+                  <div class="views">Date: <%= original_date%>
+                  </div>
+                  <div class="stats">
+                      <i class="fa-solid fa-heart"></i><%= blogs[i].upvoteLists.length %>
+                     
+                  </div>
+                   
+                </div>
+              </div>
+            </div>
+              <% } %>
+        </div>
+        
+      </div>
+</div>
+
+<footer>
+  <%- include('partials/footer') %>
+</footer>
+</body>
+</html>
+
+

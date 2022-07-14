@@ -71,14 +71,14 @@
             </li>
             <%}%>
           </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
+          <form class="d-flex" action="/author" method="POST">
+            <input class="form-control me-2" type="text" id="author" name = "author"
               placeholder="Search"
-              aria-label="Search"
+               
+              required
             />
-            <button class="btn btn-outline-success" type="submit">
+            <!-- <input  class="form-control me-2" type="text" id="title" name="title" required /> -->
+            <button class="btn btn-outline-success" type="submit" >
               Search
             </button>
           </form>

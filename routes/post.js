@@ -5,10 +5,10 @@ const Post = require('../model/post');
 
  
 
- router.get('/create-post',(req,res )=>
+ router.post('/create-post',(req,res )=>
  {
    
-    res.redirect('create-post.ejs'); 
+    res.render('create-post.ejs'); 
  }); 
 
  

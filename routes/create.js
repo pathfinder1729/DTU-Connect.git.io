@@ -7,7 +7,10 @@ const Post = require('../model/post');
  router.get('/create-post',(req,res )=>
  {
    
+  console.log(req.body.title) ; 
+  console.log("upar dekh") ; 
     res.render('create-post.ejs'); 
+   
  }); 
  
  router.post('/create-post',async (req, res )=>{
@@ -42,6 +45,26 @@ const Post = require('../model/post');
      }
      res.render('home.ejs'); 
  })
+
+ router.post('/author',async(req,res )=>
+{
+     console.log(req.body.title) ;  
+     console.log(req.body.author) ; 
+   //   consloe.log(id) ; 
+   console.log("vikash")
+   const author = req.body.author ; 
+  // console.log(id) ; 
+  let blogs = await Post.find({author:author});
+  console.log(blogs.length) ; 
+     if(blogs.length==0)
+     {
+        res.render("no_post_found.ejs")
+     }
+     else 
+
+     res.render('author.ejs',{blogs}); 
+    
+}); 
  module.exports = router
   
 

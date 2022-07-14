@@ -24,7 +24,7 @@ router.get('/notice',async(req,res )=>
      
     let newBlogs = await Post.find({}); 
      let blogs = newBlogs.reverse() ; 
-     console.log(blogs) ; 
+     //console.log(blogs) ; 
    res.render('notice.ejs',{blogs}); 
 }); 
 
@@ -32,7 +32,7 @@ router.get('/single_post/:id',async(req,res )=>
 {
     const  id = req.params.id ; 
    const post = await Post.findById({_id: id}); 
-    console.log(post) ; 
+    //console.log(post) ; 
    res.render('single_post.ejs',{post}); 
     
 }); 
@@ -86,5 +86,13 @@ router.get('/single_post/vote/:id',async(req,res )=>
      }
     
 }); 
-
+router.post('/search',async(req,res )=>
+{
+   //  const  id = req.body.text ; 
+   //   consloe.log(id) ; 
+   console.log("search")
+   res.redirect("/"); 
+    
+}); 
+  
 module.exports=router ; 
