@@ -11,6 +11,10 @@ const Post = require('../model/post');
     res.render('create-post.ejs'); 
  }); 
 
- 
+ router.post('/cre',(req,res )=>
+ {
+   
+    res.render('create-post.ejs'); 
+ }); 
 
 module.exports=router ; 
