@@ -6,8 +6,8 @@ const {flash} = require("express-flash-message")
 var mongoose = require('mongoose'); 
 const session = require("express-session")
 const MongoDBStore = require("connect-mongodb-session")(session);
- const uri = "mongodb+srv://Vikash:1234@cluster0.fhbsion.mongodb.net/?retryWrites=true&w=majority";
-//  const uri = process.env.MONGODB; 
+ //const uri = "mongodb+srv://Vikash:1234@cluster0.fhbsion.mongodb.net/?retryWrites=true&w=majority";
+  const uri = process.env.MONGODB; 
 const local = "mongodb://localhost:27017/Check_connection"; 
 const router = express.Router();
 const Post = require('./model/post'); 
@@ -109,7 +109,7 @@ app.get("/", async (req, res) => {
   res.render("home.ejs",{arr});// {isLoggedIn}
 });
  //process.env.PORT
-app.listen(8000, () => {
+app.listen(process.env.PORT, () => {
   console.log("I am live");
 });
 
