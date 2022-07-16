@@ -13,8 +13,8 @@ router.get('/blog',async(req,res )=>
 
 router.get('/interview',async(req,res )=>
 {
-     
-    let newBlogs = await Post.find({}); 
+     const type = "Interview Experience"; 
+    let newBlogs = await Post.find({type:type}); 
      let blogs = newBlogs.reverse() ; 
    res.render('interview.ejs', {blogs}); 
 }); 
