@@ -53,7 +53,7 @@ app.get("/", async (req, res) => {
  
   await req.flash('info', 'Flash is back!');
   let newBlogs = await Post.find({}); 
-     let blogs = newBlogs.reverse() ;
+     let blogs = newBlogs; 
      
      var arr=[] ; 
       var ie= "Na"
